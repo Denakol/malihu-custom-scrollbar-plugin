@@ -2121,7 +2121,7 @@ and dependencies (minified).
 						totalScrollBackOffset=tsbo>0 ? tsbo/d.scrollRatio.y : 0;
 					break;
 			}
-			if(scrollTo[1]<0 || (scrollTo[0]===0 && scrollTo[1]===0)){
+			if(scrollTo[1]<0 || (scrollTo[0]==0 && scrollTo[1]===0)){
 				scrollTo=[0,0];
 			}else if(scrollTo[1]>=limit[1]){
 				scrollTo=[limit[0],limit[1]];
