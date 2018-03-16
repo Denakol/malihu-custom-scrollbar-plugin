@@ -1029,7 +1029,7 @@ and dependencies (minified).
 				h=mCSB_container[0].scrollHeight,w=mCSB_container[0].scrollWidth;
 			if(h>contentHeight){contentHeight=h;}
 			if(w>contentWidth){contentWidth=w;}
-			return [contentHeight>mCustomScrollBox.height(),contentWidth>mCustomScrollBox.width()];
+            return [contentHeight>Math.ceil(mCustomScrollBox.height()),contentWidth>Math.ceil(mCustomScrollBox.width())];
 		},
 		/* -------------------- */
 		
