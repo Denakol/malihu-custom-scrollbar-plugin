@@ -1020,17 +1020,17 @@ and dependencies (minified).
 		
 		
 		/* checks if content overflows its container to determine if scrolling is required */
-		_overflowed=function(){
-			var $this=$(this),d=$this.data(pluginPfx),
-				mCustomScrollBox=$("#mCSB_"+d.idx),
-				mCSB_container=$("#mCSB_"+d.idx+"_container"),
-				contentHeight=d.overflowed==null ? mCSB_container.height() : mCSB_container.outerHeight(false),
-				contentWidth=d.overflowed==null ? mCSB_container.width() : mCSB_container.outerWidth(false),
-				h=mCSB_container[0].scrollHeight,w=mCSB_container[0].scrollWidth;
-			if(h>contentHeight){contentHeight=h;}
-			if(w>contentWidth){contentWidth=w;}
-            return [contentHeight>Math.ceil(mCustomScrollBox.height()),contentWidth>Math.ceil(mCustomScrollBox.width())];
-		},
+        _overflowed=function(){
+            var $this=$(this),d=$this.data(pluginPfx),
+                mCustomScrollBox=$("#mCSB_"+d.idx),
+                mCSB_container=$("#mCSB_"+d.idx+"_container"),
+                contentHeight=d.overflowed==null ? mCSB_container.height() : mCSB_container.outerHeight(false),
+                contentWidth=d.overflowed==null ? mCSB_container.width() : mCSB_container.outerWidth(false),
+                h=mCSB_container[0].scrollHeight,w=mCSB_container[0].scrollWidth;
+            if(h>contentHeight){contentHeight=h;}
+            if(w>contentWidth){contentWidth=w;}
+            return [Math.abs(contentHeight-mCustomScrollBox.height())>=1,Math.abs(contentWidth - mCustomScrollBox.width())>=1];
+        },
 		/* -------------------- */
 		
 		
